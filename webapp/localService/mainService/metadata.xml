@@ -1,0 +1,1483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.alice.ek_dc.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="xALICExEK_C_A_DISBCOMP_HDRType">
+                <Key>
+                    <PropertyRef Name="Ctcno"/>
+                </Key>
+                <Property Name="Ctcno" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Alganda" Type="Edm.Date"/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Zahlstc" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Cthcurr" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Hbkid" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Hktid" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="BankAccountKey" Type="Edm.String" Nullable="false" MaxLength="11"/>
+                <Property Name="Msgid" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Payminfid" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Ctf2bnkkd" Type="Edm.Date"/>
+                <Property Name="Cthdate" Type="Edm.Date"/>
+                <Property Name="Cthkonb" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Cthkoas" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="Statbnk" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Banks" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Banka" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="Bankn" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="IbanDisplay" Type="Edm.String" Nullable="false" MaxLength="34"/>
+                <Property Name="Swift" Type="Edm.String" Nullable="false" MaxLength="11"/>
+                <Property Name="Debtname1" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Debtname2" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Deptname" Type="Edm.String" Nullable="false" MaxLength="81"/>
+                <Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="HouseNum" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="HouseAddress" Type="Edm.String" Nullable="false" MaxLength="71"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="PostCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="city_address" Type="Edm.String" Nullable="false" MaxLength="55"/>
+                <Property Name="DtaName" Type="Edm.String" Nullable="false" MaxLength="128"/>
+                <Property Name="DtaAlganda" Type="Edm.Date"/>
+                <Property Name="DtaAlganti" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="DtaAlganid" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DTA_Details" Type="Edm.String" Nullable="false" MaxLength="28"/>
+                <Property Name="HBnkdate" Type="Edm.Date"/>
+                <Property Name="HWaers" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="HAmount" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="AmountWithCurrency" Type="Edm.String" Nullable="false" MaxLength="26"/>
+                <Property Name="StatBankDate" Type="Edm.Date"/>
+                <Property Name="StatBankTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="StatBankUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="AS_data_from_bank" Type="Edm.String" Nullable="false" MaxLength="28"/>
+                <Property Name="HIntasnr" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="HStmtnr" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="HEntrynr" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="StatementDetails" Type="Edm.String" Nullable="false" MaxLength="32"/>
+                <Property Name="Algstor" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="BoStac" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Bdfblak" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Alganti" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Aenddat" Type="Edm.Date"/>
+                <Property Name="Aendtim" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Aendutc" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="Algfrda" Type="Edm.Date"/>
+                <Property Name="Algfrti" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Algf2da" Type="Edm.Date"/>
+                <Property Name="Algf2ti" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Alganid" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Aendaen" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Algfrid" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Algf2id" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Bankl" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Bkont" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="PoBox" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PoBoxNum" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="PostCode2" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PoBoxLoc" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="PostCode3" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <NavigationProperty Name="_Positions" Type="Collection(com.sap.gateway.srvd.alice.ek_dc.v0001.xALICExEK_C_A_DISBCOMP_POSType)"/>
+            </EntityType>
+            <EntityType Name="xALICExEK_C_A_DISBCOMP_POSType">
+                <Key>
+                    <PropertyRef Name="Ctcno"/>
+                    <PropertyRef Name="Ctposnr"/>
+                </Key>
+                <Property Name="Ctcno" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Ctposnr" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="Compiler_No" Type="Edm.String" Nullable="false" MaxLength="19"/>
+                <Property Name="Ctpcurr" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Ctpauzb" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="ctpauzbWithCurrency" Type="Edm.String" Nullable="false" MaxLength="26"/>
+                <Property Name="Endtoendid" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Instrid" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Zahlutn" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PRemittTxt" Type="Edm.String" Nullable="false" MaxLength="140"/>
+                <Property Name="StatRet" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="RBelbeinBnk" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="RBelbeinPa" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="RBelbeinPa_Bukrs" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="r_belbein_bnk_Bukrs" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Banks" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Bankk" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Swift" Type="Edm.String" Nullable="false" MaxLength="11"/>
+                <Property Name="BankDetails" Type="Edm.String" Nullable="false" MaxLength="31"/>
+                <Property Name="Bankn" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Banka" Type="Edm.String" Nullable="false" MaxLength="60"/>
+                <Property Name="RBnkdate" Type="Edm.Date"/>
+                <Property Name="RWaers" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="RAmount" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="r_amountWithCurrency" Type="Edm.String" Nullable="false" MaxLength="26"/>
+                <Property Name="Zahlrsc" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="RRetTxt" Type="Edm.String" Nullable="false" MaxLength="140"/>
+                <Property Name="StatRetDate" Type="Edm.Date"/>
+                <Property Name="StatRetTime" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="StatRetUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="StatRetDetails" Type="Edm.String" Nullable="false" MaxLength="28"/>
+                <Property Name="RIntasnr" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="RStmtnr" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="REntrynr" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="StatementDetails" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Partnn1" Type="Edm.String" Nullable="false" MaxLength="70"/>
+                <Property Name="Partnn2" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Vorname" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="PartnerDetails" Type="Edm.String" Nullable="false" MaxLength="132"/>
+                <Property Name="Strassn" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Hausnr" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="StreetHouse" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Postlei" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Ortname" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="CountryPostalCity" Type="Edm.String" Nullable="false" MaxLength="55"/>
+                <Property Name="Algstor" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Alganid" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Alganda" Type="Edm.Date"/>
+                <Property Name="Alganti" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Aendaen" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Aenddat" Type="Edm.Date"/>
+                <Property Name="Aendtim" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Aendutc" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="Etagenr" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="Tuer" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Bankl" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Bdfblak" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Bkref" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Bkont" Type="Edm.String" Nullable="false" MaxLength="2"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="xALICExEK_C_A_DISBCOMP_HDR" EntityType="com.sap.gateway.srvd.alice.ek_dc.v0001.xALICExEK_C_A_DISBCOMP_HDRType">
+                    <NavigationPropertyBinding Path="_Positions" Target="xALICExEK_C_A_DISBCOMP_POS"/>
+                </EntitySet>
+                <EntitySet Name="xALICExEK_C_A_DISBCOMP_POS" EntityType="com.sap.gateway.srvd.alice.ek_dc.v0001.xALICExEK_C_A_DISBCOMP_POSType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Ctcno">
+                <Annotation Term="SAP__common.Label" String="Exkasso-Sammler-Nr"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="Exk.-Sammler-Nr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Exkasso-Sammler-Nr"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FCTCNO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Alganda">
+                <Annotation Term="SAP__common.Label" String="Datensatzinformation: Anlage-Datum"/>
+                <Annotation Term="SAP__common.Heading" String="Anl-Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Anlage-Datum"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGANDA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Bukrs">
+                <Annotation Term="SAP__common.Label" String="Buchungskreis"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="BuKr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Buchungskreis"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BUKRS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Zahlstc">
+                <Annotation Term="SAP__common.Label" String="Zahlweg"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Cod"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Zahlweg"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FZAHLSTC"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Cthcurr">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Währungsschlüssel"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Währg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Währungsschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WAERS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Hbkid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Hausbank"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Kurzschlüssel für eine Hausbank"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=HBKID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Hktid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Konto-ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Kurzschlüssel für eine Kontenverbindung"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=HKTID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/BankAccountKey">
+                <Annotation Term="SAP__common.Label" String="Kurzschlüssel für eine Hausbank"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Msgid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Punkt-zu-Punkt-ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Punkt-zu-Punkt-Referenz der Nachricht"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FMSGID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Payminfid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Externe Sammler ID"/>
+                <Annotation Term="SAP__common.Heading" String="Externe ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Payment-Information-ID (externe Ref. des Sammlers)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FPAYMINFID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Cthdate">
+                <Annotation Term="SAP__common.Label" String="Auftragsdatum"/>
+                <Annotation Term="SAP__common.Heading" String="AuftragsD"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Auftragsdatum"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FCTHDATE"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Cthkonb">
+                <Annotation Term="SAP__common.Label" String="Kontrollsumme Betrag"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Cthcurr"/>
+                <Annotation Term="SAP__common.Heading" String="Kontrollsumme Betrag"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Kontrollsumme Betrag"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FCTHKONB"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Cthkoas">
+                <Annotation Term="SAP__common.Label" String="Kontrollsumme Anzahl Sätze"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="Anz. Sätze"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Kontrollsumme Anzahl Sätze"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FCTHKOAS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Statbnk">
+                <Annotation Term="SAP__common.Label" String="Verarbeitungsstatus Bankrückmeldung"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="VStat"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Verarbeitungsstatus Bankrückmeldung"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FSTATBNK"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Banks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bankland"/>
+                <Annotation Term="SAP__common.Heading" String="Land"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Länderschlüssel der Bank"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Bankn">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bankkonto"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Bankkontonummer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/IbanDisplay">
+                <Annotation Term="SAP__common.Label" String="IBAN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Swift">
+                <Annotation Term="SAP__common.Label" String="SWIFT/BIC  für internationale Zahlungen"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="SWIFT/BIC"/>
+                <Annotation Term="SAP__common.QuickInfo" String="SWIFT/BIC  für internationale Zahlungen"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=SWIFT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Deptname">
+                <Annotation Term="SAP__common.Label" String="Name des Debitors"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/HouseAddress">
+                <Annotation Term="SAP__common.Label" String="Straße und Hausnummer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Country">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Länder-/RegSchlüssel"/>
+                <Annotation Term="SAP__common.Heading" String="L/R"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Länder-/Regionenschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=LAND1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/PostCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Postleitzahl"/>
+                <Annotation Term="SAP__common.Heading" String="PLZ"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=POST_CODE"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/city_address">
+                <Annotation Term="SAP__common.Label" String="Stadtadresse"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/DtaName">
+                <Annotation Term="SAP__common.Label" String="DTA-Datei: Name"/>
+                <Annotation Term="SAP__common.Heading" String="DTA Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DTA-Datei: Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FDTA_NAME"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/DtaAlganid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="DTA Benutzer Anl."/>
+                <Annotation Term="SAP__common.Heading" String="Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DTA-Datei: Benutzer Anlage"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/DTA_Details">
+                <Annotation Term="SAP__common.Label" String="DTA-Datei: Details"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/HBnkdate">
+                <Annotation Term="SAP__common.Label" String="Buchungsdatum Bank"/>
+                <Annotation Term="SAP__common.Heading" String="BuchDat"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Buchungsdatum Bank"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FBNKDATE"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/HWaers">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Währung"/>
+                <Annotation Term="SAP__common.Heading" String="Währg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Währungsschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WAERS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/HAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="HWaers"/>
+                <Annotation Term="SAP__common.Label" String="Buchungsbetrag Bank"/>
+                <Annotation Term="SAP__common.Heading" String="Betrag Bank"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Kontoauszug: Betrag einer Buchung (Exkasso in msg.PIA)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FEXCTAMOUNT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/AmountWithCurrency">
+                <Annotation Term="SAP__common.Label" String="Kontoauszug: Betrag einer Buchung (Exkasso in msg.PIA)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/StatBankUser">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Rückmeldung: Benutzer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/AS_data_from_bank">
+                <Annotation Term="SAP__common.Label" String="Buchungstext Bank"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/HIntasnr">
+                <Annotation Term="SAP__common.Label" String="interne Datei-Nummer des Kontoauszugs"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="Auszugs-Nr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="interne Datei-Nummer des Kontoauszugs"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FINTASNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/HStmtnr">
+                <Annotation Term="SAP__common.Label" String="laufende Nummer des Kontoauszugs (je Datei)"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="ANr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="laufende Nummer des Kontoauszugs (je Datei)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FSTMTNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/HEntrynr">
+                <Annotation Term="SAP__common.Label" String="laufende Nr. des Eintrags (Buchung) im Kontoauszug"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="Eintrg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="laufende Nr. des Eintrags (Buchung) im Kontoauszug"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FENTRYNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/BoStac">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Status"/>
+                <Annotation Term="SAP__common.Heading" String="St"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Geschäftsobjektstatus (Änderung/Freigabe..)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Alganid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Anlage-Benutzer"/>
+                <Annotation Term="SAP__common.Heading" String="Anl-Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Anlage-Benutzer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGANID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Aendaen">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Änderungs-Benutzer"/>
+                <Annotation Term="SAP__common.Heading" String="Änd-Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Änderungs-Benutzer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGAEID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Algfrid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Freigabe-Benutzer"/>
+                <Annotation Term="SAP__common.Heading" String="Frg-Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Freigabe-Benutzer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGFRID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Algf2id">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Freigabe-Benutzer"/>
+                <Annotation Term="SAP__common.Heading" String="Frg-Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Freigabe-Benutzer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGFRID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Bankl">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bankschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKK"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Bkont">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Kontrollschlüssel"/>
+                <Annotation Term="SAP__common.Heading" String="KS"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Bankenkontrollschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BKONT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/PoBox">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Postfach"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_POBX"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/PostCode2">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PLZ Postfach"/>
+                <Annotation Term="SAP__common.Heading" String="PLZ"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Postleitzahl des Postfachs"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_PSTCD2"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/PostCode3">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Firmenpostleitzahl"/>
+                <Annotation Term="SAP__common.Heading" String="PLZ"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Postleitzahl der Firma (bei Großkunden)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_PSTCD3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/xALICExEK_C_A_DISBCOMP_HDR">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Positions"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="NonUpdatableNavigationProperties">
+                            <Collection>
+                                <PropertyPath>_Positions</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Cthkonb"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="HAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType">
+                <Annotation Term="SAP__common.Label" String="Disbursement Compiler - Header"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Basic Data"/>
+                            <PropertyValue Property="ID" String="BasicData"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#BASIC"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Bank Connection"/>
+                            <PropertyValue Property="ID" String="BankConnection"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#BANK"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Debtor"/>
+                            <PropertyValue Property="ID" String="Debtor"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#DEBTOR"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="DTAdata"/>
+                            <PropertyValue Property="ID" String="DTAdata"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#DTAdata"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="AS Data From Bank"/>
+                            <PropertyValue Property="ID" String="ASBankData"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ASBANK"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Positions"/>
+                            <PropertyValue Property="ID" String="Items"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Positions/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ASBANK">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="HBnkdate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="AmountWithCurrency"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="AS_data_from_bank"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="HIntasnr"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="HStmtnr"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="HEntrynr"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="BANK">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="IbanDisplay"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Swift"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="BASIC">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Ctcno"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Alganda"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Bukrs"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Zahlstc"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BankAccountKey"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Cthdate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Cthcurr"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Cthkonb"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Cthkoas"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Statbnk"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="DEBTOR">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Deptname"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="HouseAddress"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="city_address"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="DTAdata">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="DtaName"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="DTA_Details"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="CTC"/>
+                        <PropertyValue Property="TypeNamePlural" String="CTCs"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="Ctcno"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Ctcno"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Alganda"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Zahlstc"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BankAccountKey"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Cthdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Cthcurr"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Cthkonb"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Cthkoas"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Statbnk"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Ctcno"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Alganda"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Bukrs"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Zahlstc"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BankAccountKey"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Cthdate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Cthcurr"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Cthkonb"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Cthkoas"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Statbnk"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="SAP__common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="Ctcno"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Ctcno</PropertyPath>
+                        <PropertyPath>Alganda</PropertyPath>
+                        <PropertyPath>Bukrs</PropertyPath>
+                        <PropertyPath>Zahlstc</PropertyPath>
+                        <PropertyPath>BankAccountKey</PropertyPath>
+                        <PropertyPath>Cthdate</PropertyPath>
+                        <PropertyPath>Cthcurr</PropertyPath>
+                        <PropertyPath>Statbnk</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="TextDirectionLayout" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                        <PropertyValue Property="UploadToFileShare" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Ctcno">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Exkasso-Sammler-Nr"/>
+                <Annotation Term="SAP__common.Heading" String="Exk.-Sammler-Nr"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FCTCNO"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Ctposnr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Exkasso-Positions-Nr"/>
+                <Annotation Term="SAP__common.Heading" String="Pos.-Nr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Positions-Nr im Exkasso-Sammler"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FCTPOSNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Compiler_No">
+                <Annotation Term="SAP__common.Label" String="Exkasso-Sammler-Nr"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Ctpcurr">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Währung"/>
+                <Annotation Term="SAP__common.Heading" String="Währg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Währungsschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WAERS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Ctpauzb">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Ctpcurr"/>
+                <Annotation Term="SAP__common.Label" String="Auszahlungsbetrag"/>
+                <Annotation Term="SAP__common.Heading" String="Auszahlg.betrag"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Auszahlungsbetrag in Transaktionswährung"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FCTPAUZB"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/ctpauzbWithCurrency">
+                <Annotation Term="SAP__common.Label" String="Auszahlungsbetrag in Transaktionswährung"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Endtoendid">
+                <Annotation Term="SAP__common.Label" String="Ende-zu-Ende-Referenz in einer Nachricht"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Ende-zu-Ende-ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Ende-zu-Ende-Referenz in einer Nachricht"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FENDTOENDID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Instrid">
+                <Annotation Term="SAP__common.Label" String="Punkt-zu-Punkt Referenz eines Auftrags"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Auftrags-Referenz"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Punkt-zu-Punkt Referenz eines Auftrags"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FINSTRID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Zahlutn">
+                <Annotation Term="SAP__common.Label" String="Zahlungsauftrags-Nr"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Heading" String="ZA-Nr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Zahlungsauftrags-Nr"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FZAHLUTN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/PRemittTxt">
+                <Annotation Term="SAP__common.Label" String="Verwendungszweck / freier Text zur Pos."/>
+                <Annotation Term="SAP__common.Heading" String="Verwendungszweck"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Verwendungszweck / freier Text zur Pos."/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FREMITT_TXT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/StatRet">
+                <Annotation Term="SAP__common.Label" String="Verarbeitungsstatus Rückläufer"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Status"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Verarbeitungsstatus Rückläufer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FSTAT_RET"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RBelbeinBnk">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Beleg-Nr"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FBELBEIN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RBelbeinPa">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Beleg-Nr"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FBELBEIN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Bukrs">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Buchungskreis"/>
+                <Annotation Term="SAP__common.Heading" String="BuKr"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BUKRS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RBelbeinPa_Bukrs">
+                <Annotation Term="SAP__common.Label" String="Beleg-Nr-pa-Buchungskreis"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/r_belbein_bnk_Bukrs">
+                <Annotation Term="SAP__common.Label" String="Beleg-Nr-bnk-Buchungskreis"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Banks">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bankland"/>
+                <Annotation Term="SAP__common.Heading" String="Land"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Länderschlüssel der Bank"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Bankk">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bankschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKK"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Swift">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="SWIFT/BIC"/>
+                <Annotation Term="SAP__common.QuickInfo" String="SWIFT/BIC  für internationale Zahlungen"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=SWIFT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/BankDetails">
+                <Annotation Term="SAP__common.Label" String="Bankverbindung"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Bankn">
+                <Annotation Term="SAP__common.Label" String="Bankkontonummer"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Bankkonto"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Bankkontonummer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Banka">
+                <Annotation Term="SAP__common.Label" String="Name des Geldinstituts"/>
+                <Annotation Term="SAP__common.Heading" String="Name des Geldinstituts"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name des Geldinstituts"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RBnkdate">
+                <Annotation Term="SAP__common.Label" String="Buchungsdatum Bank"/>
+                <Annotation Term="SAP__common.Heading" String="BuchDat"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Buchungsdatum Bank"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FBNKDATE"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RWaers">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Währung"/>
+                <Annotation Term="SAP__common.Heading" String="Währg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Währungsschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=WAERS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="RWaers"/>
+                <Annotation Term="SAP__common.Label" String="Buchungsbetrag Bank"/>
+                <Annotation Term="SAP__common.Heading" String="Betrag Bank"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Kontoauszug: Betrag einer Buchung (Exkasso in msg.PIA)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FEXCTAMOUNT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/r_amountWithCurrency">
+                <Annotation Term="SAP__common.Label" String="Kontoauszug: Betrag einer Buchung (Exkasso in msg.PIA)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Zahlrsc">
+                <Annotation Term="SAP__common.Label" String="Rückläufergrund"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Heading" String="Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Rückläufergrund"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FZAHLRSC"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RRetTxt">
+                <Annotation Term="SAP__common.Label" String="Rückläufer-Info / freier Text zum Rückläufer"/>
+                <Annotation Term="SAP__common.Heading" String="Info RL"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Rückläufer-Info / freier Text zum Rückläufer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FRET_TXT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/StatRetUser">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Meldung Rückläufer: Benutzer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/StatRetDetails">
+                <Annotation Term="SAP__common.Label" String="Meldung Rückläufer: Details"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RIntasnr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Auszugs-Datei-Nummer"/>
+                <Annotation Term="SAP__common.Heading" String="Auszugs-Nr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="interne Datei-Nummer des Kontoauszugs"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FINTASNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/RStmtnr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="lfd. Auszugs-Nr."/>
+                <Annotation Term="SAP__common.Heading" String="ANr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="laufende Nummer des Kontoauszugs (je Datei)"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FSTMTNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/REntrynr">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="lfd. Nr des Eintrags"/>
+                <Annotation Term="SAP__common.Heading" String="Eintrg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="laufende Nr. des Eintrags (Buchung) im Kontoauszug"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FENTRYNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/StatementDetails">
+                <Annotation Term="SAP__common.Label" String="Details zur Erklärung"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/PartnerDetails">
+                <Annotation Term="SAP__common.Label" String="PartnerDetails"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Land1">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Länder-/RegSchlüssel"/>
+                <Annotation Term="SAP__common.Heading" String="L/R"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Länder-/Regionenschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=LAND1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Postlei">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Postleitzahl"/>
+                <Annotation Term="SAP__common.Heading" String="Postleitz."/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=PSTLZ"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Alganid">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Anlage-Benutzer"/>
+                <Annotation Term="SAP__common.Heading" String="Anl-Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Anlage-Benutzer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGANID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Aendaen">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Änderungs-Benutzer"/>
+                <Annotation Term="SAP__common.Heading" String="Änd-Benutzer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Änderungs-Benutzer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGAEID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Bankl">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bankleitzahl"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Bkref">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Referenzangabe"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Referenzangabe zur Bankverbindung"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BKREF"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Bkont">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Kontrollschlüssel"/>
+                <Annotation Term="SAP__common.Heading" String="KS"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Bankenkontrollschlüssel"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BKONT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType">
+                <Annotation Term="SAP__common.Label" String="CDS view for Disbursement Compiler item"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Basic Data"/>
+                            <PropertyValue Property="ID" String="PosBasic"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#POS_BASIC"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Cancelling Document"/>
+                            <PropertyValue Property="ID" String="CancelDoc"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#POS_CANCEL"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Bank Connection"/>
+                            <PropertyValue Property="ID" String="BankConn"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#POS_BANK"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="AS Data From Bank"/>
+                            <PropertyValue Property="ID" String="ASBank"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#POS_ASBANK"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Creditor"/>
+                            <PropertyValue Property="ID" String="Creditor"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#POS_Creditor"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="POS_ASBANK">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="RBnkdate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="r_amountWithCurrency"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Zahlrsc"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="RRetTxt"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="StatRetDetails"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="StatementDetails"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="POS_BANK">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BankDetails"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Bankn"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Banka"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="POS_BASIC">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Compiler_No"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ctpauzbWithCurrency"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Endtoendid"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Instrid"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Zahlutn"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PRemittTxt"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="StatRet"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="POS_CANCEL">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="RBelbeinPa_Bukrs"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="r_belbein_bnk_Bukrs"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="POS_Creditor">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PartnerDetails"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="StreetHouse"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="CountryPostalCity"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Compiler_No"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Compiler_No"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/xALICExEK_C_A_DISBCOMP_POS">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group "/>
+                        <PropertyValue Property="SearchSyntax" String="https://url.sap/odata-search"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Ctpauzb"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="RAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Ctf2bnkkd">
+                <Annotation Term="SAP__common.Label" String="Exk.-File zur Bank"/>
+                <Annotation Term="SAP__common.Heading" String="Stichtag Exk.-File zur Bank"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Stichtag für spätesten Transfer des Exkasso-Files zur Bank"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FCTF2BNKKD"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Banka">
+                <Annotation Term="SAP__common.Label" String="Geldinstitut"/>
+                <Annotation Term="SAP__common.Heading" String="Name des Geldinstituts"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name des Geldinstituts"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=BANKA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Debtname1">
+                <Annotation Term="SAP__common.Label" String="Debitor Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name 1 des Debitors"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Debtname2">
+                <Annotation Term="SAP__common.Label" String="Debitor Name 2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name 2 des Debitors"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Street">
+                <Annotation Term="SAP__common.Label" String="Straße"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_STREET"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/HouseNum">
+                <Annotation Term="SAP__common.Label" String="Hausnummer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_HSNM1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/City">
+                <Annotation Term="SAP__common.Label" String="Ort"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_CITY1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/DtaAlganda">
+                <Annotation Term="SAP__common.Label" String="DTA-Datei Datum"/>
+                <Annotation Term="SAP__common.Heading" String="DTA Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DTA-Datei: Datum"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FDTA_ALGANDA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/DtaAlganti">
+                <Annotation Term="SAP__common.Label" String="DTA-Datei Uhrzeit"/>
+                <Annotation Term="SAP__common.Heading" String="Uhrzeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="DTA-Datei: Uhrzeit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/StatBankDate">
+                <Annotation Term="SAP__common.Label" String="Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Rückmeldung: Datum"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/StatBankTime">
+                <Annotation Term="SAP__common.Label" String="Uhrzeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Rückmeldung: Uhrzeit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Algstor">
+                <Annotation Term="SAP__common.Label" String="Storno-Kennzeichen"/>
+                <Annotation Term="SAP__common.Heading" String="SK"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGSTOR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Bdfblak">
+                <Annotation Term="SAP__common.Label" String="NIB"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Bankleitzahl-alt-Kennzeichen"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FBDFBLAK"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Alganti">
+                <Annotation Term="SAP__common.Label" String="Anlage-Zeit"/>
+                <Annotation Term="SAP__common.Heading" String="Anl-Zeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Anlage-Zeit"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGANTI"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Aenddat">
+                <Annotation Term="SAP__common.Label" String="Änderungs-Datum"/>
+                <Annotation Term="SAP__common.Heading" String="Änd-Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Änderungs-Datum"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGAEDA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Aendtim">
+                <Annotation Term="SAP__common.Label" String="Änderungs-Zeit"/>
+                <Annotation Term="SAP__common.Heading" String="Änd-Zeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Änderungs-Zeit"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGAETI"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Aendutc">
+                <Annotation Term="SAP__common.Label" String="UTC-Zeit Änd."/>
+                <Annotation Term="SAP__common.Heading" String="UTC Zeitstempel Änderung"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Änderung UTC-Zeitstempel"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Algfrda">
+                <Annotation Term="SAP__common.Label" String="Freigabe-Datum"/>
+                <Annotation Term="SAP__common.Heading" String="Frg-Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Freigabe-Datum"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGFRDA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Algfrti">
+                <Annotation Term="SAP__common.Label" String="Freigabe-Zeit"/>
+                <Annotation Term="SAP__common.Heading" String="Frg-Zeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Freigabe-Zeit"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGFRTI"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Algf2da">
+                <Annotation Term="SAP__common.Label" String="Freigabe2-Datum"/>
+                <Annotation Term="SAP__common.Heading" String="Fr2-Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Zweit-Freigabe-Datum"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGF2DA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/Algf2ti">
+                <Annotation Term="SAP__common.Label" String="Freigabe2-Zeit"/>
+                <Annotation Term="SAP__common.Heading" String="Fr2-Zeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Zweit-Freigabe-Zeit"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGF2TI"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/PoBoxNum">
+                <Annotation Term="SAP__common.Label" String="Postfach ohne Nr."/>
+                <Annotation Term="SAP__common.Heading" String="PF"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Kennzeichen: Postfachangabe ohne Nummer"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_POBXNUM"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_HDRType/PoBoxLoc">
+                <Annotation Term="SAP__common.Label" String="Postfach-Ort"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Ort des Postfachs"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_POBXLOC"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/StatRetDate">
+                <Annotation Term="SAP__common.Label" String="Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Meldung Rückläufer: Datum"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/StatRetTime">
+                <Annotation Term="SAP__common.Label" String="Uhrzeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Meldung Rückläufer: Uhrzeit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Partnn1">
+                <Annotation Term="SAP__common.Label" String="Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="PARTNER-NAME1"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FPARTNN1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Partnn2">
+                <Annotation Term="SAP__common.Label" String="Name 2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="PARTNER-NAME2"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FPARTNN2"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Vorname">
+                <Annotation Term="SAP__common.Label" String="Vorname"/>
+                <Annotation Term="SAP__common.QuickInfo" String="VORNAME"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FVORNAME"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Strassn">
+                <Annotation Term="SAP__common.Label" String="Straße"/>
+                <Annotation Term="SAP__common.QuickInfo" String="STRASSEN-NAME1"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FSTRASN1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Hausnr">
+                <Annotation Term="SAP__common.Label" String="Haus-Nr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HAUS-NR"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FHAUSNR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Ortname">
+                <Annotation Term="SAP__common.Label" String="Ort"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Ort-Name"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FORTNAME"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Algstor">
+                <Annotation Term="SAP__common.Label" String="Storno-Kennzeichen"/>
+                <Annotation Term="SAP__common.Heading" String="SK"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGSTOR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Alganda">
+                <Annotation Term="SAP__common.Label" String="Anlage-Datum"/>
+                <Annotation Term="SAP__common.Heading" String="Anl-Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Anlage-Datum"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGANDA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Alganti">
+                <Annotation Term="SAP__common.Label" String="Anlage-Zeit"/>
+                <Annotation Term="SAP__common.Heading" String="Anl-Zeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Anlage-Zeit"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGANTI"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Aenddat">
+                <Annotation Term="SAP__common.Label" String="Änderungs-Datum"/>
+                <Annotation Term="SAP__common.Heading" String="Änd-Datum"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Änderungs-Datum"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGAEDA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Aendtim">
+                <Annotation Term="SAP__common.Label" String="Änderungs-Zeit"/>
+                <Annotation Term="SAP__common.Heading" String="Änd-Zeit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Änderungs-Zeit"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FALGAETI"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Aendutc">
+                <Annotation Term="SAP__common.Label" String="UTC-Zeit Änd."/>
+                <Annotation Term="SAP__common.Heading" String="UTC Zeitstempel Änderung"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Datensatzinformation: Änderung UTC-Zeitstempel"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Etagenr">
+                <Annotation Term="SAP__common.Label" String="Etage"/>
+                <Annotation Term="SAP__common.QuickInfo" String="ETAGE"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FETAGENR"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Tuer">
+                <Annotation Term="SAP__common.Label" String="Tür-Nr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="TUER-NR"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FTUER"/>
+            </Annotations>
+            <Annotations Target="SAP__self.xALICExEK_C_A_DISBCOMP_POSType/Bdfblak">
+                <Annotation Term="SAP__common.Label" String="NIB"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Bankleitzahl-alt-Kennzeichen"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=%2FALICE%2FBDFBLAK"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

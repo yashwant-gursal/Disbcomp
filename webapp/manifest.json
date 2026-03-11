@@ -1,0 +1,222 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SAP/ui5-manifest/master/schema.json",
+  "_version": "1.73.1",
+  "sap.app": {
+    "id": "com.alice.disbcompiler.zdisbcompiler",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.20.4",
+      "toolsId": "b0489d5b-56f8-441e-a0f1-30ed1319c3a4"
+    },
+    "dataSources": {
+      "annotation": {
+        "type": "ODataAnnotation",
+        "uri": "annotations/annotation.xml",
+        "settings": {
+          "localUri": "annotations/annotation.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata4/alice/ek_dc_ui/srvd/alice/ek_dc/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "annotation"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "disbcompiler-display": {
+          "semanticObject": "disbcompiler",
+          "action": "display",
+          "title": "{{disbcompiler-display.flpTitle}}",
+          "subTitle": "{{disbcompiler-display.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.14",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.alice.disbcompiler.zdisbcompiler.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {
+        "flexibleColumnLayout": {
+          "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+        },
+        "routerClass": "sap.f.routing.Router"
+      },
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "xALICExEK_C_A_DISBCOMP_HDRList",
+          "target": [
+            "xALICExEK_C_A_DISBCOMP_HDRList"
+          ]
+        },
+        {
+          "pattern": "xALICExEK_C_A_DISBCOMP_HDR({key}):?query:",
+          "name": "xALICExEK_C_A_DISBCOMP_HDRObjectPage",
+          "target": [
+            "xALICExEK_C_A_DISBCOMP_HDRList",
+            "xALICExEK_C_A_DISBCOMP_HDRObjectPage"
+          ]
+        },
+        {
+          "pattern": "xALICExEK_C_A_DISBCOMP_HDR({key})/_Positions({key2}):?query:",
+          "name": "xALICExEK_C_A_DISBCOMP_POSObjectPage",
+          "target": [
+            "xALICExEK_C_A_DISBCOMP_HDRList",
+            "xALICExEK_C_A_DISBCOMP_HDRObjectPage",
+            "xALICExEK_C_A_DISBCOMP_POSObjectPage"
+          ]
+        }
+      ],
+      "targets": {
+        "xALICExEK_C_A_DISBCOMP_HDRList": {
+          "type": "Component",
+          "id": "xALICExEK_C_A_DISBCOMP_HDRList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/xALICExEK_C_A_DISBCOMP_HDR",
+              "variantManagement": "Page",
+              "navigation": {
+                "xALICExEK_C_A_DISBCOMP_HDR": {
+                  "detail": {
+                    "route": "xALICExEK_C_A_DISBCOMP_HDRObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
+        },
+        "xALICExEK_C_A_DISBCOMP_HDRObjectPage": {
+          "type": "Component",
+          "id": "xALICExEK_C_A_DISBCOMP_HDRObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/xALICExEK_C_A_DISBCOMP_HDR",
+              "navigation": {
+                "_Positions": {
+                  "detail": {
+                    "route": "xALICExEK_C_A_DISBCOMP_POSObjectPage"
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/xALICExEK_C_A_DISBCOMP_HDR({key})"
+        },
+        "xALICExEK_C_A_DISBCOMP_POSObjectPage": {
+          "type": "Component",
+          "id": "xALICExEK_C_A_DISBCOMP_POSObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/xALICExEK_C_A_DISBCOMP_HDR/_Positions"
+            }
+          },
+          "controlAggregation": "endColumnPages",
+          "contextPattern": "/xALICExEK_C_A_DISBCOMP_HDR({key})/_Positions({key2})"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },
+  "sap.fe": {
+    "app": {
+      "enableLazyLoading": true
+    }
+  }
+}
